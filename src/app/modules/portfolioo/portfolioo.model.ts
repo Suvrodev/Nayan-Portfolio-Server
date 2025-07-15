@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { TPortfolio } from "./portfolio.interface";
+import { TPortfolio } from "./portfolioo.interface";
 
 const portfolioSchema = new Schema<TPortfolio>(
   {

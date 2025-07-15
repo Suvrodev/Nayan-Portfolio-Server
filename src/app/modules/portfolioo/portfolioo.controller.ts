@@ -1,11 +1,12 @@
 import { NextFunction, Request, RequestHandler, Response } from "express";
-import { portfolioService } from "./portfolio.service";
+import { portfolioServices } from "./portfolioo.service";
 
 ///Add Portfolio
 const addPortfolio: RequestHandler = async (req, res, next) => {
+  // res.send(" Portfolio-add");
   try {
     const portfolioData = req.body;
-    const result = await portfolioService.addPortfolioIntoDB(portfolioData);
+    const result = await portfolioServices.addPortfolioIntoDB(portfolioData);
     res.status(201).json({
       success: true,
       message: "Portfolio Added successfully",
@@ -19,8 +20,9 @@ const addPortfolio: RequestHandler = async (req, res, next) => {
 
 //Get All Portfolio
 const getAllPortfolio: RequestHandler = async (req, res, next) => {
+  // res.send(" Portfolio-Get");
   try {
-    const result = await portfolioService.getAllPortfolioFromDB();
+    const result = await portfolioServices.getAllPortfolioFromDB();
     res.status(201).json({
       success: true,
       message: "Portfolio Retrived successfully",
@@ -34,11 +36,12 @@ const getAllPortfolio: RequestHandler = async (req, res, next) => {
 
 //Get Specific Portfolio
 const getSpecificPortfolio: RequestHandler = async (req, res, next) => {
+  // res.send(" Portfolio-Specific-get");
   try {
     const portfolioTitle = req?.params?.portfolioTitle;
     console.log("------------------------");
     console.log("Portfolio Title: ", portfolioTitle);
-    const result = await portfolioService.getSpecificPortfolioFromDB(
+    const result = await portfolioServices.getSpecificPortfolioFromDB(
       portfolioTitle
     );
     console.log("Result: ", result);
@@ -55,10 +58,11 @@ const getSpecificPortfolio: RequestHandler = async (req, res, next) => {
 
 //Delete Portfolio
 const deletePortfolio: RequestHandler = async (req, res, next) => {
+  // res.send(" Portfolio-Delete");
   try {
     const portfolioId = req?.params?.portfolioId;
     console.log("Portfolio ID: ", portfolioId);
-    const result = await portfolioService.deletePortfolioFromDB(portfolioId);
+    const result = await portfolioServices.deletePortfolioFromDB(portfolioId);
     console.log("Result: ", result);
     res.status(201).json({
       success: true,
@@ -73,11 +77,12 @@ const deletePortfolio: RequestHandler = async (req, res, next) => {
 
 //Update Portfolio
 const updatePortfolio: RequestHandler = async (req, res, next) => {
+  // res.send(" Portfolio-Update");
   try {
-    const portfolioId = req.params.serviceId;
+    const portfolioId = req.params.portfolioId;
     const portfolio = req.body;
 
-    const result = await portfolioService.updatPortfolioIntoDB(
+    const result = await portfolioServices.updatPortfolioIntoDB(
       portfolioId,
       portfolio
     );
@@ -93,7 +98,7 @@ const updatePortfolio: RequestHandler = async (req, res, next) => {
   }
 };
 
-export const PortfolioController = {
+export const PortfolioControllers = {
   addPortfolio,
   getAllPortfolio,
   getSpecificPortfolio,

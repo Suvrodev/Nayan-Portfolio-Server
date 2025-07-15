@@ -9,7 +9,7 @@ const service_route_1 = require("../modules/Service/service.route");
 const blog_route_1 = require("../modules/Blog/blog.route");
 const forgetPassword_route_1 = require("../modules/ForgetPassword/forgetPassword.route");
 const admin_route_1 = require("../modules/Admin/admin.route");
-const portfolio_route_1 = require("../modules/Portfolio/portfolio.route");
+const portfolioo_route_1 = require("../modules/portfolioo/portfolioo.route");
 const router = express_1.default.Router();
 const moduleRoutes = [
     {
@@ -17,8 +17,8 @@ const moduleRoutes = [
         route: service_route_1.ServiceRoute,
     },
     {
-        path: "/portfolio",
-        route: portfolio_route_1.PortfolioRoute,
+        path: "/portfolioo",
+        route: portfolioo_route_1.portfoliooRoutes,
     },
     {
         path: "/blog",

@@ -1,6 +1,6 @@
 import AppError from "../../errors/AppError";
-import { TPortfolio } from "./portfolio.interface";
-import { PortfolioModel } from "./portfolio.model";
+import { TPortfolio } from "./portfolioo.interface";
+import { PortfolioModel } from "./portfolioo.model";
 
 ///Create Portfolio into db
 const addPortfolioIntoDB = async (payload: TPortfolio) => {
@@ -34,17 +34,20 @@ const deletePortfolioFromDB = async (portfolioId: string) => {
 };
 
 //Update Portfolio
-const updatPortfolioIntoDB = async (serviceId: string, payload: TPortfolio) => {
-  console.log("User Id in service: ", serviceId);
-  console.log("payload in service", payload);
+const updatPortfolioIntoDB = async (
+  portfolioId: string,
+  payload: TPortfolio
+) => {
+  console.log("Portfolio id: ", portfolioId);
+  console.log("payload in portfolio", payload);
 
-  const result = await PortfolioModel.updateOne({ _id: serviceId }, payload, {
+  const result = await PortfolioModel.findByIdAndUpdate(portfolioId, payload, {
     new: true,
   });
   return result;
 };
 
-export const portfolioService = {
+export const portfolioServices = {
   addPortfolioIntoDB,
   getAllPortfolioFromDB,
   getSpecificPortfolioFromDB,

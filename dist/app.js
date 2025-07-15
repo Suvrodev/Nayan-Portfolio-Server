@@ -19,7 +19,9 @@ const globalErrorHandler_1 = __importDefault(require("./app/middleware/globalErr
 const notFound_1 = __importDefault(require("./app/middleware/notFound"));
 const app = (0, express_1.default)();
 //Parser
-app.use(express_1.default.json());
+// app.use(express.json());
+app.use(express_1.default.json({ limit: "5mb" }));
+app.use(express_1.default.urlencoded({ extended: true, limit: "5mb" }));
 //Cors integration
 // app.use(cors({ origin: ["*"], credentials: true }));
 /**

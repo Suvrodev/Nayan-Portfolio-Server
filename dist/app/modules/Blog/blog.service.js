@@ -18,31 +18,14 @@ const createBlogIntoDB = (blogData) => __awaiter(void 0, void 0, void 0, functio
     return result;
 });
 ///Get All Blog
-const getAllBlog = (params) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("params: ", params);
-    let res;
-    if (params == "yes") {
-        res = yield blog_model_1.BlogModel.find({ isEnable: "yes", pin: "yes" }).select("title category image createdAt writer pin");
-    }
-    else {
-        res = yield blog_model_1.BlogModel.find({ isEnable: "yes" }).select("title category image createdAt writer pin");
-    }
-    return res;
-});
-///Get All Blog By admin  isEanble dont care
-const getAllBlogByAdmin = () => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield blog_model_1.BlogModel.find().select("title category image createdAt writer pin isEnable writerEmail");
-    return res;
-});
-///Get All Blog By Instructor own isEanble dont care
-const getAllBlogByInstructor = (writerEmail) => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield blog_model_1.BlogModel.find({ writerEmail: writerEmail }).select("title category image createdAt writer pin isEnable writerEmail");
+const getAllBlog = () => __awaiter(void 0, void 0, void 0, function* () {
+    const res = yield blog_model_1.BlogModel.find().select("title image date category");
     return res;
 });
 //Get Single Blog
-const getSingleBlogFromDB = (blogId) => __awaiter(void 0, void 0, void 0, function* () {
+const getSingleBlogFromDB = (blogTitle) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield blog_model_1.BlogModel.findOne({ _id: blogId });
+        const result = yield blog_model_1.BlogModel.findOne({ title: blogTitle });
         return result;
     }
     catch (error) {
@@ -64,32 +47,10 @@ const updateBlogFromDB = (blogId, blogData) => __awaiter(void 0, void 0, void 0,
     });
     return result;
 });
-//Update Pin
-const updateBlogPinFromDB = (blogId, payload) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("blog id:", blogId);
-    console.log("Update Data: ", payload);
-    const result = yield blog_model_1.BlogModel.findByIdAndUpdate({ _id: blogId }, payload, {
-        new: true,
-    });
-    return result;
-});
-//Update enable or disable
-const updateBlogIsEnableFromDB = (blogId, payload) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("blog id:", blogId);
-    console.log("Update Data: ", payload);
-    const result = yield blog_model_1.BlogModel.findByIdAndUpdate({ _id: blogId }, payload, {
-        new: true,
-    });
-    return result;
-});
 exports.BlogServices = {
     createBlogIntoDB,
     getAllBlog,
-    getAllBlogByAdmin,
-    getAllBlogByInstructor,
     getSingleBlogFromDB,
     deleteBlogFromDB,
     updateBlogFromDB,
-    updateBlogPinFromDB,
-    updateBlogIsEnableFromDB,
 };

@@ -14,4 +14,6 @@ async function main() {
   }
 }
 
-main();
+// main();
+main().catch(console.dir);
+export default app;

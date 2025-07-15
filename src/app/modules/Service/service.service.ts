@@ -21,14 +21,6 @@ const getAllServiceFromDB = async () => {
   return result;
 };
 
-//Get All Service from DB
-const getAllServiceByAdminFromDB = async () => {
-  const result = await ServiceModel.find().sort({
-    order: 1,
-  });
-  return result;
-};
-
 //Get All Service from DB By Admin
 const getSpecificServiceFromDB = async (serviceId: string) => {
   const result = await ServiceModel.findOne({ _id: serviceId });
@@ -58,7 +50,6 @@ const updatServiceIntoDBFromDB = async (
 export const serviceServices = {
   addServiceIntoDB,
   getAllServiceFromDB,
-  getAllServiceByAdminFromDB,
   getSpecificServiceFromDB,
   deleteServiceFromDB,
   updatServiceIntoDBFromDB,

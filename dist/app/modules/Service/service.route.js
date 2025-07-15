@@ -9,7 +9,6 @@ const service_controller_1 = require("./service.controller");
 const router = express_1.default.Router();
 router.post("/", service_controller_1.ServiceController.addService);
 router.get("/", service_controller_1.ServiceController.getAllService);
-router.get("/admin/", service_controller_1.ServiceController.getAllServiceByAdmin);
 router.get("/:serviceId", service_controller_1.ServiceController.getSpecificService);
 router.delete("/:serviceId", service_controller_1.ServiceController.deleteService);
 router.patch("/:serviceId", service_controller_1.ServiceController.updateService);

@@ -31,40 +31,7 @@ const createBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
 // Get All Blog
 const getAllBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { pin } = req.query;
-        const result = yield blog_service_1.BlogServices.getAllBlog(pin);
-        // Send response with the results
-        res.status(200).json({
-            message: "Blog retrieved successfully",
-            success: true,
-            data: result,
-        });
-    }
-    catch (error) {
-        next(error);
-    }
-});
-// Get All Blog By Admin
-const getAllBlogByAdmin = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const result = yield blog_service_1.BlogServices.getAllBlogByAdmin();
-        // Send response with the results
-        res.status(200).json({
-            message: "Blog retrieved successfully",
-            success: true,
-            data: result,
-        });
-    }
-    catch (error) {
-        next(error);
-    }
-});
-// Get All Blog By Instructor
-const getAllBlogByInstructor = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a;
-    try {
-        const email = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.email;
-        const result = yield blog_service_1.BlogServices.getAllBlogByInstructor(email);
+        const result = yield blog_service_1.BlogServices.getAllBlog();
         // Send response with the results
         res.status(200).json({
             message: "Blog retrieved successfully",
@@ -80,8 +47,8 @@ const getAllBlogByInstructor = (req, res, next) => __awaiter(void 0, void 0, voi
 const getSingleBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
-        const blogId = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.id;
-        const result = yield blog_service_1.BlogServices.getSingleBlogFromDB(blogId);
+        const blogTitle = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.blogTitle;
+        const result = yield blog_service_1.BlogServices.getSingleBlogFromDB(blogTitle);
         // Send response with the results
         res.status(200).json({
             message: "Blog retrieved successfully",
@@ -126,48 +93,10 @@ const updateBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
         next(error);
     }
 });
-//Update Blog
-const updateBlogPin = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const blogId = req.params.id;
-        const blogBody = req === null || req === void 0 ? void 0 : req.body;
-        const result = yield blog_service_1.BlogServices.updateBlogPinFromDB(blogId, blogBody);
-        //Send Response
-        res.status(200).json({
-            message: "Pin updated successfully",
-            success: true,
-            data: result,
-        });
-    }
-    catch (error) {
-        next(error);
-    }
-});
-//Update Blog isEnable
-const updateBlogIsEnable = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const blogId = req.params.id;
-        const blogBody = req === null || req === void 0 ? void 0 : req.body;
-        const result = yield blog_service_1.BlogServices.updateBlogIsEnableFromDB(blogId, blogBody);
-        //Send Response
-        res.status(200).json({
-            message: "isEnable updated successfully",
-            success: true,
-            data: result,
-        });
-    }
-    catch (error) {
-        next(error);
-    }
-});
 exports.BlogControllers = {
     createBlog,
     getAllBlog,
-    getAllBlogByAdmin,
-    getAllBlogByInstructor,
     getSingleBlog,
     deleteBlog,
     updateBlog,
-    updateBlogPin,
-    updateBlogIsEnable,
 };

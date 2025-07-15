@@ -27,13 +27,6 @@ const getAllServiceFromDB = () => __awaiter(void 0, void 0, void 0, function* ()
         .select("title shortDescription");
     return result;
 });
-//Get All Service from DB
-const getAllServiceByAdminFromDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield service_model_1.ServiceModel.find().sort({
-        order: 1,
-    });
-    return result;
-});
 //Get All Service from DB By Admin
 const getSpecificServiceFromDB = (serviceId) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield service_model_1.ServiceModel.findOne({ _id: serviceId });
@@ -56,7 +49,6 @@ const updatServiceIntoDBFromDB = (serviceId, payload) => __awaiter(void 0, void 
 exports.serviceServices = {
     addServiceIntoDB,
     getAllServiceFromDB,
-    getAllServiceByAdminFromDB,
     getSpecificServiceFromDB,
     deleteServiceFromDB,
     updatServiceIntoDBFromDB,

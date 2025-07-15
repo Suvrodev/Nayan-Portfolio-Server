@@ -31,20 +31,6 @@ const getAllService: RequestHandler = async (req, res, next) => {
     next(error);
   }
 };
-//Get All Service by Admin
-const getAllServiceByAdmin: RequestHandler = async (req, res, next) => {
-  try {
-    const result = await serviceServices.getAllServiceByAdminFromDB();
-    res.status(201).json({
-      success: true,
-      message: "Service Retrived successfully",
-      statusCode: 201,
-      data: result,
-    });
-  } catch (error) {
-    next(error);
-  }
-};
 
 //Get Specific Service
 const getSpecificService: RequestHandler = async (req, res, next) => {
@@ -87,6 +73,7 @@ const updateService: RequestHandler = async (req, res, next) => {
   try {
     const serviceId = req.params.serviceId;
     const service = req.body;
+    console.log("Service body: ", service);
 
     const result = await serviceServices.updatServiceIntoDBFromDB(
       serviceId,
@@ -106,7 +93,6 @@ const updateService: RequestHandler = async (req, res, next) => {
 
 export const ServiceController = {
   addService,
-  getAllServiceByAdmin,
   getAllService,
   getSpecificService,
   deleteService,

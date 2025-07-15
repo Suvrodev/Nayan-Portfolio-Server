@@ -28,4 +28,6 @@ function main() {
         }
     });
 }
-main();
+// main();
+main().catch(console.dir);
+exports.default = app_1.default;

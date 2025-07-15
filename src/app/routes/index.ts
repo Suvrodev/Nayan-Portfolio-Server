@@ -4,7 +4,7 @@ import { ServiceRoute } from "../modules/Service/service.route";
 import { blogRoutes } from "../modules/Blog/blog.route";
 import { ForgetPasswordRoute } from "../modules/ForgetPassword/forgetPassword.route";
 import { adminRoutes } from "../modules/Admin/admin.route";
-import { PortfolioRoute } from "../modules/Portfolio/portfolio.route";
+import { portfoliooRoutes } from "../modules/portfolioo/portfolioo.route";
 
 const router = express.Router();
 
@@ -14,8 +14,8 @@ const moduleRoutes = [
     route: ServiceRoute,
   },
   {
-    path: "/portfolio",
-    route: PortfolioRoute,
+    path: "/portfolioo",
+    route: portfoliooRoutes,
   },
 
   {
