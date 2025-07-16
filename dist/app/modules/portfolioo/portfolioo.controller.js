@@ -49,10 +49,8 @@ const getSpecificPortfolio = (req, res, next) => __awaiter(void 0, void 0, void 
     var _a;
     // res.send(" Portfolio-Specific-get");
     try {
-        const portfolioTitle = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.portfolioTitle;
-        console.log("------------------------");
-        console.log("Portfolio Title: ", portfolioTitle);
-        const result = yield portfolioo_service_1.portfolioServices.getSpecificPortfolioFromDB(portfolioTitle);
+        const portfolioId = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.portfolioId;
+        const result = yield portfolioo_service_1.portfolioServices.getSpecificPortfolioFromDB(portfolioId);
         console.log("Result: ", result);
         res.status(201).json({
             success: true,

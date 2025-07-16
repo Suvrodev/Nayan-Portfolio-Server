@@ -41,8 +41,8 @@ const getAllBlog: RequestHandler = async (req, res, next) => {
 // Get Single Blog
 const getSingleBlog: RequestHandler = async (req, res, next) => {
   try {
-    const blogTitle = req?.params?.blogTitle;
-    const result = await BlogServices.getSingleBlogFromDB(blogTitle);
+    const blogId = req?.params?.blogId;
+    const result = await BlogServices.getSingleBlogFromDB(blogId);
 
     // Send response with the results
     res.status(200).json({

@@ -22,8 +22,11 @@ const getAllPortfolioFromDB = async () => {
 };
 
 //Get Specific Portfolio from DB
-const getSpecificPortfolioFromDB = async (title: string) => {
-  const result = await PortfolioModel.findOne({ title: title });
+const getSpecificPortfolioFromDB = async (_id: string) => {
+  console.log("---------------------------");
+  console.log("Portfolio id: ", _id);
+  const result = await PortfolioModel.findById({ _id });
+  console.log("Result: ", result);
   return result;
 };
 

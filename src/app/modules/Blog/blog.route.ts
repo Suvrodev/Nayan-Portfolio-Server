@@ -8,7 +8,7 @@ const router = express.Router();
 //will call controller function
 router.post("/", BlogControllers.createBlog);
 router.get("/", BlogControllers.getAllBlog);
-router.get("/:blogTitle", BlogControllers.getSingleBlog);
+router.get("/:blogId", BlogControllers.getSingleBlog);
 router.delete("/:id", BlogControllers.deleteBlog);
 router.patch("/update/:id", BlogControllers.updateBlog);
 

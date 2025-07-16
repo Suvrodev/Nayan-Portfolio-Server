@@ -10,7 +10,7 @@ const router = express_1.default.Router();
 //will call controller function
 router.post("/", blog_controller_1.BlogControllers.createBlog);
 router.get("/", blog_controller_1.BlogControllers.getAllBlog);
-router.get("/:blogTitle", blog_controller_1.BlogControllers.getSingleBlog);
+router.get("/:blogId", blog_controller_1.BlogControllers.getSingleBlog);
 router.delete("/:id", blog_controller_1.BlogControllers.deleteBlog);
 router.patch("/update/:id", blog_controller_1.BlogControllers.updateBlog);
 exports.blogRoutes = router;

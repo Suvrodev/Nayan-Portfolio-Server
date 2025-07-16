@@ -19,9 +19,9 @@ const getAllBlog = async () => {
 };
 
 //Get Single Blog
-const getSingleBlogFromDB = async (blogTitle: string) => {
+const getSingleBlogFromDB = async (_id: string) => {
   try {
-    const result = await BlogModel.findOne({ title: blogTitle });
+    const result = await BlogModel.findById({ _id });
     return result;
   } catch (error) {
     throw new Error("Blog Not Found");

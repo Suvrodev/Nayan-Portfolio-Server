@@ -28,8 +28,11 @@ const getAllPortfolioFromDB = () => __awaiter(void 0, void 0, void 0, function* 
     return result;
 });
 //Get Specific Portfolio from DB
-const getSpecificPortfolioFromDB = (title) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield portfolioo_model_1.PortfolioModel.findOne({ title: title });
+const getSpecificPortfolioFromDB = (_id) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("---------------------------");
+    console.log("Portfolio id: ", _id);
+    const result = yield portfolioo_model_1.PortfolioModel.findById({ _id });
+    console.log("Result: ", result);
     return result;
 });
 //Delete Portfolio from DB

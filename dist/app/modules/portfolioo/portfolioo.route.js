@@ -9,7 +9,7 @@ const portfolioo_controller_1 = require("./portfolioo.controller");
 const router = express_1.default.Router();
 router.post("/", portfolioo_controller_1.PortfolioControllers.addPortfolio);
 router.get("/", portfolioo_controller_1.PortfolioControllers.getAllPortfolio);
-router.get("/title/:portfolioTitle", portfolioo_controller_1.PortfolioControllers.getSpecificPortfolio);
+router.get("/:portfolioId", portfolioo_controller_1.PortfolioControllers.getSpecificPortfolio);
 router.delete("/:portfolioId", portfolioo_controller_1.PortfolioControllers.deletePortfolio);
 router.patch("/:portfolioId", portfolioo_controller_1.PortfolioControllers.updatePortfolio);
 exports.portfoliooRoutes = router;

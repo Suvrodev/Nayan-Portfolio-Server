@@ -47,8 +47,8 @@ const getAllBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
 const getSingleBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
-        const blogTitle = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.blogTitle;
-        const result = yield blog_service_1.BlogServices.getSingleBlogFromDB(blogTitle);
+        const blogId = (_a = req === null || req === void 0 ? void 0 : req.params) === null || _a === void 0 ? void 0 : _a.blogId;
+        const result = yield blog_service_1.BlogServices.getSingleBlogFromDB(blogId);
         // Send response with the results
         res.status(200).json({
             message: "Blog retrieved successfully",

@@ -23,9 +23,9 @@ const getAllBlog = () => __awaiter(void 0, void 0, void 0, function* () {
     return res;
 });
 //Get Single Blog
-const getSingleBlogFromDB = (blogTitle) => __awaiter(void 0, void 0, void 0, function* () {
+const getSingleBlogFromDB = (_id) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield blog_model_1.BlogModel.findOne({ title: blogTitle });
+        const result = yield blog_model_1.BlogModel.findById({ _id });
         return result;
     }
     catch (error) {

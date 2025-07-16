@@ -38,11 +38,9 @@ const getAllPortfolio: RequestHandler = async (req, res, next) => {
 const getSpecificPortfolio: RequestHandler = async (req, res, next) => {
   // res.send(" Portfolio-Specific-get");
   try {
-    const portfolioTitle = req?.params?.portfolioTitle;
-    console.log("------------------------");
-    console.log("Portfolio Title: ", portfolioTitle);
+    const portfolioId = req?.params?.portfolioId;
     const result = await portfolioServices.getSpecificPortfolioFromDB(
-      portfolioTitle
+      portfolioId
     );
     console.log("Result: ", result);
     res.status(201).json({
