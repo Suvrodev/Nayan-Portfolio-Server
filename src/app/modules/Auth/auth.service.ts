@@ -19,6 +19,12 @@ const loginUser = async (payload: TLoginUser) => {
     throw new AppError(403, "User is Blocked");
   }
 
+  ///USer admin or not
+  const userIsAdmin = isUserExists?.role;
+  if (userIsAdmin !== "admin") {
+    throw new AppError(403, "Only Admin accessable");
+  }
+
   //Check Password is right or wrong
   // const isPasswordMatched = await bcrypt.compare(
   //   payload?.password,

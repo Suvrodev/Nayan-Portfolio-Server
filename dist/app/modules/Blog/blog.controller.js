@@ -64,6 +64,8 @@ const getSingleBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, func
 const deleteBlog = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const blogId = req.params.id;
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++");
+        console.log("Blog id for delete: ", blogId);
         const result = yield blog_service_1.BlogServices.deleteBlogFromDB(blogId);
         //Send Response
         res.status(200).json({

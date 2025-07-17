@@ -59,6 +59,8 @@ const getSingleBlog: RequestHandler = async (req, res, next) => {
 const deleteBlog: RequestHandler = async (req, res, next) => {
   try {
     const blogId = req.params.id;
+    console.log("+++++++++++++++++++++++++++++++++++++++++++++");
+    console.log("Blog id for delete: ", blogId);
     const result = await BlogServices.deleteBlogFromDB(blogId);
 
     //Send Response
