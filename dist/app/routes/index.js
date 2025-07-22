@@ -10,6 +10,8 @@ const blog_route_1 = require("../modules/Blog/blog.route");
 const forgetPassword_route_1 = require("../modules/ForgetPassword/forgetPassword.route");
 const admin_route_1 = require("../modules/Admin/admin.route");
 const portfolioo_route_1 = require("../modules/portfolioo/portfolioo.route");
+const resume_route_1 = require("../modules/resume/resume.route");
+const mail_route_1 = require("../modules/mail/mail.route");
 const router = express_1.default.Router();
 const moduleRoutes = [
     {
@@ -23,6 +25,14 @@ const moduleRoutes = [
     {
         path: "/blog",
         route: blog_route_1.blogRoutes,
+    },
+    {
+        path: "/resume",
+        route: resume_route_1.resumeRoutes,
+    },
+    {
+        path: "/mail",
+        route: mail_route_1.MailRoute,
     },
     {
         path: "/auth",
