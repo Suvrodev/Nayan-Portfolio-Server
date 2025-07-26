@@ -42,18 +42,16 @@ app.use(express_1.default.urlencoded({ extended: true, limit: "5mb" }));
  * Cors-2
  */
 const allowedOrigins = [
+    "https://sarkar-nayan.vercel.app",
+    "https://sarkar-nayan-nayansarkars-sarkar-nayans-projects.vercel.app",
     "http://localhost:5173",
-    "http://localhost:5173/",
-    "https://aradhyacore.netlify.app",
-    "https://www.aradhyacore.com",
-    "https://www.aradhyacore.com/",
-    "https://aradhyacore.com",
-    "https://aradhyacore.com/",
-    "www.aradhyacore.com",
-    "www.aradhyacore.com/",
+    "http://localhost:5174",
+    "http://localhost:3000",
+    "https://my-next-app-seven-weld.vercel.app",
 ];
 app.use((0, cors_1.default)({
     origin: function (origin, callback) {
+        console.log("Incoming origin:", origin);
         // Allow requests with no origin (like mobile apps, curl, etc.)
         if (!origin)
             return callback(null, true);

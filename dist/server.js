@@ -14,11 +14,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = __importDefault(require("./app"));
 const config_1 = __importDefault(require("./app/config"));
-const mongoose_1 = __importDefault(require("mongoose"));
+const chatgptLib_1 = __importDefault(require("./chatgptLib"));
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield mongoose_1.default.connect(config_1.default.database_url);
+            // await mongoose.connect(config.database_url as string);
+            /**
+             *  For Lib from Chat gpt
+             */
+            yield (0, chatgptLib_1.default)();
+            /**
+             * For Increase timeout in mongoose
+             */
+            // await mongoose.connect(config.database_url as string, {
+            //   serverSelectionTimeoutMS: 30000, // 30 seconds
+            //   socketTimeoutMS: 45000, // 45 seconds
+            // });
             app_1.default.listen(config_1.default.port, () => {
                 console.log(`Example app listening on port ${config_1.default.port}`);
             });
