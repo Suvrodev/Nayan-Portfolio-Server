@@ -48,6 +48,7 @@ const allowedOrigins = [
     "http://localhost:5174",
     "http://localhost:3000",
     "https://my-next-app-seven-weld.vercel.app",
+    "https://sarkar-nayan-next.vercel.app",
 ];
 app.use((0, cors_1.default)({
     origin: function (origin, callback) {

@@ -17,7 +17,7 @@ const sendMailService = (mailData) => __awaiter(void 0, void 0, void 0, function
     console.log("Mail Data: ", mailData);
     const { name, email, phone, subject, message } = mailData;
     console.log("Mail Data: ", mailData);
-    (0, sendMail_1.sendEmail)(name, email, phone, subject, message);
+    yield (0, sendMail_1.sendEmail)(name, email, phone, subject, message);
     const result = {};
     return result;
 });

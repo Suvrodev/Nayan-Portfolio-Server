@@ -27,12 +27,12 @@ const serviceSchema = new mongoose_1.Schema({
         {
             title: {
                 type: String,
-                required: true,
+                // required: true,
                 trim: true,
             },
             percent: {
                 type: Number,
-                required: true,
+                // required: true,
             },
         },
     ],
