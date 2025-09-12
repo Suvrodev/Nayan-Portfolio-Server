@@ -20,6 +20,18 @@ const createBlogIntoDB = (blogData) => __awaiter(void 0, void 0, void 0, functio
 ///Get All Blog
 const getAllBlog = () => __awaiter(void 0, void 0, void 0, function* () {
     const res = yield blog_model_1.BlogModel.find().select("title image date category description");
+    // const res = await BlogModel.aggregate([
+    //   {
+    //     $project: {
+    //       title: 1,
+    //       image: 1,
+    //       date: 1,
+    //       category: 1,
+    //       // শুধু description এর প্রথম 100 character নেবে
+    //       description: { $substrCP: ["$description", 0, 700] },
+    //     },
+    //   },
+    // ]);
     return res;
 });
 //Get Single Blog
