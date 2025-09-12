@@ -13,7 +13,9 @@ const createBlogIntoDB = async (blogData: TBlog) => {
 
 ///Get All Blog
 const getAllBlog = async () => {
-  const res = await BlogModel.find().select("title image date category");
+  const res = await BlogModel.find().select(
+    "title image date category description"
+  );
 
   return res;
 };

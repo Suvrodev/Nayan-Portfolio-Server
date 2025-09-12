@@ -19,7 +19,7 @@ const createBlogIntoDB = (blogData) => __awaiter(void 0, void 0, void 0, functio
 });
 ///Get All Blog
 const getAllBlog = () => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield blog_model_1.BlogModel.find().select("title image date category");
+    const res = yield blog_model_1.BlogModel.find().select("title image date category description");
     return res;
 });
 //Get Single Blog
