@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true, limit: "5mb" }));
 // app.use(cors({ origin: ["*"], credentials: true }));
 
 /**
- * Cors -1
+ * Cors -1 (Check Cors)
  */
 // app.use(
 //   cors({
