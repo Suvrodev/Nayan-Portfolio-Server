@@ -25,7 +25,7 @@ app.use(express_1.default.urlencoded({ extended: true, limit: "5mb" }));
 //Cors integration
 // app.use(cors({ origin: ["*"], credentials: true }));
 /**
- * Cors -1
+ * Cors -1 (Check Cors)
  */
 // app.use(
 //   cors({
@@ -43,6 +43,7 @@ app.use(express_1.default.urlencoded({ extended: true, limit: "5mb" }));
  */
 const allowedOrigins = [
     "https://sarkar-nayan.vercel.app",
+    "https://www.sarkarnayan.com",
     "https://sarkar-nayan-nayansarkars-sarkar-nayans-projects.vercel.app",
     "http://localhost:5173",
     "http://localhost:5174",
